@@ -171,7 +171,7 @@ static CFIndex WriteDataToStream(NSData* data, CFWriteStreamRef stream)
         return nil;
     }
 
-    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
 
     [req setHTTPMethod:httpMethod];
 

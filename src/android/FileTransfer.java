@@ -344,6 +344,9 @@ public class FileTransfer extends CordovaPlugin {
                     // Use a post method.
                     conn.setRequestMethod(httpMethod);
 
+                    // set timeout
+                    conn.setConnectTimeout(60*1000);
+
                     // if we specified a Content-Type header, don't do multipart form upload
                     boolean multipartFormUpload = (headers == null) || !headers.has("Content-Type");
                     if (multipartFormUpload) {
